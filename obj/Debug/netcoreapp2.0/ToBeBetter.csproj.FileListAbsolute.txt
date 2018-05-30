@@ -1,0 +1,11 @@
+d:\Projects\ToBeBetter\bin\Debug\netcoreapp2.0\ToBeBetter.deps.json
+d:\Projects\ToBeBetter\bin\Debug\netcoreapp2.0\ToBeBetter.runtimeconfig.json
+d:\Projects\ToBeBetter\bin\Debug\netcoreapp2.0\ToBeBetter.runtimeconfig.dev.json
+d:\Projects\ToBeBetter\bin\Debug\netcoreapp2.0\ToBeBetter.dll
+d:\Projects\ToBeBetter\bin\Debug\netcoreapp2.0\ToBeBetter.pdb
+d:\Projects\ToBeBetter\obj\Debug\netcoreapp2.0\ToBeBetter.csprojAssemblyReference.cache
+d:\Projects\ToBeBetter\obj\Debug\netcoreapp2.0\ToBeBetter.csproj.CoreCompileInputs.cache
+d:\Projects\ToBeBetter\obj\Debug\netcoreapp2.0\ToBeBetter.AssemblyInfoInputs.cache
+d:\Projects\ToBeBetter\obj\Debug\netcoreapp2.0\ToBeBetter.AssemblyInfo.cs
+d:\Projects\ToBeBetter\obj\Debug\netcoreapp2.0\ToBeBetter.dll
+d:\Projects\ToBeBetter\obj\Debug\netcoreapp2.0\ToBeBetter.pdb
