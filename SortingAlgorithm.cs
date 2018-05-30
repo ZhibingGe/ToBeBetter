@@ -53,7 +53,7 @@ namespace ToBeBetter
         /// <summary>
         /// 合并排序
         /// 算法：Step1：首先分割数列，将array左右等分，如果奇数，则左多一个，递归进行，直到无法再分（最终每一块只有1个元素）。
-        ///       Step2:两块进行合并，逐个取出两块的第一个元素的较小值，直到遍历两块所有元素，递归进行直到合成一块。
+        ///      Step2:两块进行合并，逐个取出两块的第一个元素的较小值，直到遍历两块所有元素，递归进行直到合成一块。
         /// 时间复杂度：nlogn
         /// 空间复杂度：n
         /// 稳定性：稳定
@@ -61,12 +61,40 @@ namespace ToBeBetter
         /// <param name="array"></param>
         public static void MergeSort(ref int[] array)
         {
-
+            MergeSort(ref array,0,array.Length-1);
         }   
-        public static void SpiltArray(ref int[] array,int startindex,int midx,int endindex)
+        public static void MergeSort(ref int[] array,int startindex,int endindex)
         {
-
+            if(startindex>=endindex)
+                return;
+            int midx = (startindex+endindex)/2;
+            MergeSort(ref array,startindex,midx);
+            MergeSort(ref array,midx+1,endindex);
+            Merge(ref array,startindex,midx,endindex);
         } 
+        public static void Merge(ref int[] array,int startindex,int midx,int endindex)
+        {
+            var arrayTemp = new int[endindex-startindex+1];
+            var lindex=0;
+            var rindex=0;
+            for(int i=0;i<arrayTemp.Length;i++)
+            {
+                if(array[lindex]>array[rindex])
+                {
+                    arrayTemp[i]=array[rindex];
+                    rindex++;
+                }
+                else
+                {
+                    arrayTemp[i]=array[lindex];
+                    lindex++;
+                }
+            }
+            for(int i=0;i<arrayTemp.Length;i++)
+            {
+                array[startindex+i]=arrayTemp[i];
+            }
+        }
         #endregion
     }
 }
