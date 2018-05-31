@@ -16,9 +16,10 @@ namespace ToBeBetter
             method:SortMethodTest,len:1000000,costtime/len:0.00071012775ms
              */
             //TestSortMethodIsRight(SortingAlgorithm.QuickSort);
-            TestSortMethod(SortingAlgorithm.QuickSort);
+            //TestSortMethod(SortingAlgorithm.QuickSort);
             //TestSortMethodIsRight(SortingAlgorithm.MergeSort);
-            TestSortMethod(SortingAlgorithm.MergeSort);
+            //TestSortMethod(SortingAlgorithm.MergeSort);
+            TestSortMethodIsRight(SortingAlgorithm.HeapSort);            
             Console.WriteLine("Done!");
         }
         public static void TestSortMethod(SortMethodTest sortmethod)
@@ -47,7 +48,7 @@ namespace ToBeBetter
         {
             //分别对长度为10，100，1000，10000，100000的数字进行排序，得到运行时间，每个长度运行10次取均值
             Random rn = new Random();
-            int len = 10;
+            int len = 20;
 
             int[] array = new int[len];
             for (int j = 0; j < len; j++)

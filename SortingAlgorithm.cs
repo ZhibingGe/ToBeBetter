@@ -96,5 +96,72 @@ namespace ToBeBetter
             }
         }
         #endregion
+
+        #region 堆排序 HeapSort
+        /// <summary>
+        /// 堆排序算法：建堆，最小化堆，即根节点比子节点小，最大化堆：根节点比子节点大，从堆的最高节点提取最小值，提取后重新建堆（提取最后一个值放在堆顶然后建堆）
+        /// 时间复杂度：nlogn
+        /// 空间复杂度：1
+        /// 稳定性：不稳定
+        /// </summary>
+        /// <param name="array"></param>
+        public static void HeapSort(ref int[] array)
+        {
+            //建堆，最大值在上
+            BuildHeap(ref array);
+            //堆排序
+            SortHeap(ref array);
+        }   
+        public static void SortHeap(ref int[] array)
+        {
+            Console.WriteLine(string.Join(",",array));
+            //最大值再上面，需要与最后一个值互换，最后一个值放在堆顶需要重新排序一下
+            for(int i=0;i<array.Length;i++)
+            {
+                //最大值与末尾值互换
+                var temp = array[array.Length-1-i];
+                array[array.Length-1-i]=array[0];
+                array[0]=temp;
+                //末尾值到堆顶需要重新整理堆,将堆顶与左右两节点中较大的互换
+                var currentIndex=0;
+                while(currentIndex*2+1<array.Length-1-i)
+                {
+                    var nextindex =0;
+                    if(currentIndex*2+2>=array.Length-1-i||array[currentIndex*2+1]>array[currentIndex*2+2])
+                    {
+                        nextindex=currentIndex*2+1;
+                    }
+                    else
+                    {
+                        nextindex=currentIndex*2+2;
+                    }
+                    if(array[currentIndex]<array[nextindex])
+                    {
+                        temp = array[currentIndex];
+                        array[currentIndex]=array[nextindex];
+                        array[nextindex]=temp;
+                        currentIndex=nextindex;
+                    }
+                    else
+                        break;
+                }
+            Console.WriteLine(string.Join(",",array));                
+            }
+        }
+        public static  void BuildHeap(ref int[] array)
+        {
+            for(int i=1;i<array.Length;i++)
+            {
+                int j=i;
+                while(array[j]>array[(j-1)/2] && j>0)
+                {
+                    var temp = array[j];
+                    array[j] = array[(j-1)/2];
+                    array[(j-1)/2] = temp;
+                    j=(j-1)/2;
+                }
+            }
+        }
+        #endregion
     }
 }

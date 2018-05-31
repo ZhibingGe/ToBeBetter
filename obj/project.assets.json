@@ -664,28 +664,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/iboloo/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "E:\\Users\\Jabin_Ge\\.nuget\\packages\\": {},
+    "E:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/iboloo/Documents/GitHub/ToBeBetter/ToBeBetter.csproj",
+      "projectUniqueName": "d:\\Projects\\ToBeBetter\\ToBeBetter.csproj",
       "projectName": "ToBeBetter",
-      "projectPath": "/Users/iboloo/Documents/GitHub/ToBeBetter/ToBeBetter.csproj",
-      "packagesPath": "/Users/iboloo/.nuget/packages/",
-      "outputPath": "/Users/iboloo/Documents/GitHub/ToBeBetter/obj/",
+      "projectPath": "d:\\Projects\\ToBeBetter\\ToBeBetter.csproj",
+      "packagesPath": "E:\\Users\\Jabin_Ge\\.nuget\\packages\\",
+      "outputPath": "d:\\Projects\\ToBeBetter\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "E:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/iboloo/.nuget/NuGet/NuGet.Config"
+        "E:\\Users\\Jabin_Ge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "E:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "E:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
