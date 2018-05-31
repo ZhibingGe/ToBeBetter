@@ -19,7 +19,12 @@ namespace ToBeBetter
             //TestSortMethod(SortingAlgorithm.QuickSort);
             //TestSortMethodIsRight(SortingAlgorithm.MergeSort);
             //TestSortMethod(SortingAlgorithm.MergeSort);
-            TestSortMethodIsRight(SortingAlgorithm.HeapSort);            
+            //TestSortMethodIsRight(SortingAlgorithm.HeapSort);            
+            //TestSortMethod(SortingAlgorithm.HeapSort);
+            //TestSortMethodIsRight(SortingAlgorithm.InsertionSort);            
+            //TestSortMethod(SortingAlgorithm.InsertionSort);        
+            //TestSortMethodIsRight(SortingAlgorithm.SelectionSort);            
+            //TestSortMethod(SortingAlgorithm.SelectionSort);               
             Console.WriteLine("Done!");
         }
         public static void TestSortMethod(SortMethodTest sortmethod)

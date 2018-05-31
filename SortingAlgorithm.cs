@@ -162,6 +162,54 @@ namespace ToBeBetter
         }
         #endregion
 
+        #region 插入排序
+        /// <summary>
+        /// 插入排序：略
+        /// 时间复杂度：n^2
+        /// 空间复杂度：1
+        /// </summary>
+        /// <param name="array"></param>
+        public static void InsertionSort(ref int[] array)
+        {
+            for(int i=1;i<array.Length;i++)
+            {
+                int j=i;
+                while(j>0 && array[j]<array[j-1])
+                {
+                    Swap(ref array,j,j-1);
+                    j--;
+                }
+            }
+        }
+        #endregion
+        
+        #region 选择排序
+        /// <summary>
+        /// 选择排序：选择最小放第一位，第二小放第二位.。。
+        /// </summary>
+        /// <param name="array"></param>
+        public static void SelectionSort(ref int[] array)
+        {
+            for(int i=0;i<array.Length-1;i++)
+            {
+                var minx=i;
+                for(int j=i+1;j<array.Length;j++)
+                {
+                    if(array[j]<array[minx])
+                    {
+                        minx=j;
+                    }
+                }
+                Swap(ref array,minx,i);
+            }
+        }
+        #endregion
+        public static void Swap(ref int[] array,int m,int n)
+        {
+            var temp = array[m];
+            array[m]=array[n];
+            array[n]=temp;
+        }
 
     }
 }
