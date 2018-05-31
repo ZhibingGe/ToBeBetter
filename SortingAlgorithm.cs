@@ -18,37 +18,37 @@ namespace ToBeBetter
         /// <param name="array"></param>
         public static void QuickSort(ref int[] array)
         {
-            QuickSort(ref array,0,array.Length-1);
+            QuickSort(ref array, 0, array.Length - 1);
         }
 
         private static void QuickSort(ref int[] array, int startindex, int endindex)
         {
-            if(startindex>=endindex)
+            if (startindex >= endindex)
                 return;
             var currentIndex = startindex;
-            for(int i=startindex+1;i<=endindex;i++)
+            for (int i = startindex + 1; i <= endindex; i++)
             {
-                if(array[i]<array[currentIndex])
+                if (array[i] < array[currentIndex])
                 {
                     var temp = array[i];
-                    if(i-currentIndex>1)
+                    if (i - currentIndex > 1)
                     {
-                        array[i]=array[currentIndex+1];
-                        array[currentIndex+1]=array[currentIndex];
-                        array[currentIndex++]=temp;
+                        array[i] = array[currentIndex + 1];
+                        array[currentIndex + 1] = array[currentIndex];
+                        array[currentIndex++] = temp;
                     }
                     else
                     {
-                        array[i]=array[currentIndex];
-                        array[currentIndex++]=temp;
+                        array[i] = array[currentIndex];
+                        array[currentIndex++] = temp;
                     }
-                }   
+                }
             }
-            QuickSort(ref array,startindex,currentIndex-1);
-            QuickSort(ref array,currentIndex+1,endindex);
+            QuickSort(ref array, startindex, currentIndex - 1);
+            QuickSort(ref array, currentIndex + 1, endindex);
         }
         #endregion
-        
+
         #region 合并排序 MergeSort
         /// <summary>
         /// 合并排序
@@ -61,38 +61,38 @@ namespace ToBeBetter
         /// <param name="array"></param>
         public static void MergeSort(ref int[] array)
         {
-            MergeSort(ref array,0,array.Length-1);
-        }   
-        public static void MergeSort(ref int[] array,int startindex,int endindex)
+            MergeSort(ref array, 0, array.Length - 1);
+        }
+        public static void MergeSort(ref int[] array, int startindex, int endindex)
         {
-            if(startindex>=endindex)
+            if (startindex >= endindex)
                 return;
-            int midx = (startindex+endindex)/2;
-            MergeSort(ref array,startindex,midx);
-            MergeSort(ref array,midx+1,endindex);
-            Merge(ref array,startindex,midx,endindex);
-        } 
-        public static void Merge(ref int[] array,int startindex,int midx,int endindex)
+            int midx = (startindex + endindex) / 2;
+            MergeSort(ref array, startindex, midx);
+            MergeSort(ref array, midx + 1, endindex);
+            Merge(ref array, startindex, midx, endindex);
+        }
+        public static void Merge(ref int[] array, int startindex, int midx, int endindex)
         {
-            var arrayTemp = new int[endindex-startindex+1];
-            var lindex=0;
-            var rindex=0;
-            for(int i=0;i<arrayTemp.Length;i++)
+            var arrayTemp = new int[endindex - startindex + 1];
+            var lindex = 0;
+            var rindex = 0;
+            for (int i = 0; i < arrayTemp.Length; i++)
             {
-                if(array[lindex]>array[rindex])
+                if (array[lindex] > array[rindex])
                 {
-                    arrayTemp[i]=array[rindex];
+                    arrayTemp[i] = array[rindex];
                     rindex++;
                 }
                 else
                 {
-                    arrayTemp[i]=array[lindex];
+                    arrayTemp[i] = array[lindex];
                     lindex++;
                 }
             }
-            for(int i=0;i<arrayTemp.Length;i++)
+            for (int i = 0; i < arrayTemp.Length; i++)
             {
-                array[startindex+i]=arrayTemp[i];
+                array[startindex + i] = arrayTemp[i];
             }
         }
         #endregion
@@ -111,57 +111,57 @@ namespace ToBeBetter
             BuildHeap(ref array);
             //堆排序
             SortHeap(ref array);
-        }   
+        }
         public static void SortHeap(ref int[] array)
         {
-            Console.WriteLine(string.Join(",",array));
             //最大值再上面，需要与最后一个值互换，最后一个值放在堆顶需要重新排序一下
-            for(int i=0;i<array.Length;i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 //最大值与末尾值互换
-                var temp = array[array.Length-1-i];
-                array[array.Length-1-i]=array[0];
-                array[0]=temp;
+                var temp = array[array.Length - 1 - i];
+                array[array.Length - 1 - i] = array[0];
+                array[0] = temp;
                 //末尾值到堆顶需要重新整理堆,将堆顶与左右两节点中较大的互换
-                var currentIndex=0;
-                while(currentIndex*2+1<array.Length-1-i)
+                var currentIndex = 0;
+                while (currentIndex * 2 + 1 < array.Length - 1 - i)
                 {
-                    var nextindex =0;
-                    if(currentIndex*2+2>=array.Length-1-i||array[currentIndex*2+1]>array[currentIndex*2+2])
+                    var nextindex = 0;
+                    if (currentIndex * 2 + 2 >= array.Length - 1 - i || array[currentIndex * 2 + 1] > array[currentIndex * 2 + 2])
                     {
-                        nextindex=currentIndex*2+1;
+                        nextindex = currentIndex * 2 + 1;
                     }
                     else
                     {
-                        nextindex=currentIndex*2+2;
+                        nextindex = currentIndex * 2 + 2;
                     }
-                    if(array[currentIndex]<array[nextindex])
+                    if (array[currentIndex] < array[nextindex])
                     {
                         temp = array[currentIndex];
-                        array[currentIndex]=array[nextindex];
-                        array[nextindex]=temp;
-                        currentIndex=nextindex;
+                        array[currentIndex] = array[nextindex];
+                        array[nextindex] = temp;
+                        currentIndex = nextindex;
                     }
                     else
                         break;
                 }
-            Console.WriteLine(string.Join(",",array));                
             }
         }
-        public static  void BuildHeap(ref int[] array)
+        public static void BuildHeap(ref int[] array)
         {
-            for(int i=1;i<array.Length;i++)
+            for (int i = 1; i < array.Length; i++)
             {
-                int j=i;
-                while(array[j]>array[(j-1)/2] && j>0)
+                int j = i;
+                while (array[j] > array[(j - 1) / 2] && j > 0)
                 {
                     var temp = array[j];
-                    array[j] = array[(j-1)/2];
-                    array[(j-1)/2] = temp;
-                    j=(j-1)/2;
+                    array[j] = array[(j - 1) / 2];
+                    array[(j - 1) / 2] = temp;
+                    j = (j - 1) / 2;
                 }
             }
         }
         #endregion
+
+
     }
 }
