@@ -139,7 +139,9 @@ namespace ToBeBetter
             var xd1 = (-2*pb[0]-Math.Sqrt(4*pb[0]*pb[0]-12*pa[0]*pc[0]))/6/pa[0];
             var xd2 = (-2*pb[0]-Math.Sqrt(4*pb[0]*pb[0]-12*pa[0]*pc[0]))/6/pa[0];
             var xd=0.0;
-            if(xd1<x[0]&&xd2<x[0])
+            if(double.IsNaN(xd1))
+                xd=double.MinValue;
+            else if(xd1<x[0]&&xd2<x[0])
                 xd=Math.Max(xd1,xd2);
             else if(xd1>x[0] && xd2>x[0])
                 xd=double.MinValue;
@@ -149,7 +151,9 @@ namespace ToBeBetter
             var xu1 = (-2*pb[len-2]-Math.Sqrt(4*pb[len-2]*pb[len-2]-12*pa[len-2]*pc[len-2]))/6/pa[len-2];
             var xu2 = (-2*pb[len-2]-Math.Sqrt(4*pb[len-2]*pb[len-2]-12*pa[len-2]*pc[len-2]))/6/pa[len-2];
             var xu=0.0;
-            if(Math.Min(xu1,xu2)>=x[len-2])
+            if(double.IsNaN(xu1))
+                xu=double.MaxValue;
+            else if(Math.Min(xu1,xu2)>=x[len-2])
                 xu=Math.Min(xu1,xu2);
             else if(Math.Max(xu1,xu2)<=x[len-2])
                 xu=double.MaxValue;
