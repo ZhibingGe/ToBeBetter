@@ -25,6 +25,10 @@ namespace ToBeBetter
             //TestSortMethod(SortingAlgorithm.InsertionSort);        
             //TestSortMethodIsRight(SortingAlgorithm.SelectionSort);            
             //TestSortMethod(SortingAlgorithm.SelectionSort);               
+            var x=new double[]{0,126,215,294,396,590};
+            var y=new double[]{0.229035206455836,0.315079880568642,0.411472034006586
+            ,0.498597878598207,0.646759049393383,1.04212326280765};
+            CurveFitting.CubicSplineFitting(x,y);
             Console.WriteLine("Done!");
         }
         public static void TestSortMethod(SortMethodTest sortmethod)
